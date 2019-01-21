@@ -8,27 +8,29 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 
 public class MainView extends JFrame {
+	private static final long serialVersionUID = 1L;
 
 	MainView(){
 		Image image = Toolkit.getDefaultToolkit().createImage("image\\Title.png");
-		JLabel title = new JLabel(new ImageIcon(image));
+		JButton title = new JButton(new ImageIcon(image));
 		title.setHorizontalAlignment(JLabel.CENTER);
-		title.setSize(1000, 100);
+		title.setSize(1280, 150);
+		title.setBackground(Color.white);
+		
 		add(title);
 		
 		MenuPanel menu = new MenuPanel();
 		add(menu);
 		
-		setSize(1000, 600);
+		IDPWPanel idpw = new IDPWPanel();
+		add(idpw);
+		
+		setSize(1280, 960);
 		setLayout(null);
 		setVisible(true);
 	}
-	
 	
 	public static void main(String[] args) {
 		new MainView();
