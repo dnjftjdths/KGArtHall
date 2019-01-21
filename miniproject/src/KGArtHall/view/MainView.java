@@ -6,10 +6,10 @@ import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class MainView extends JFrame {
+public class MainView extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	MainView(){
@@ -27,13 +27,11 @@ public class MainView extends JFrame {
 		IDPWPanel idpw = new IDPWPanel();
 		add(idpw);
 		
+		PosterPanel poster = new PosterPanel();
+		add(poster);
+		
 		setSize(1280, 960);
 		setLayout(null);
 		setVisible(true);
 	}
-	
-	public static void main(String[] args) {
-		new MainView();
-	}
-	
 }
