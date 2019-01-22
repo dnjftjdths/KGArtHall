@@ -35,5 +35,6 @@ public class Display extends JFrame {
 			revalidate();
 			repaint();
 		}
+
 	}
 }
