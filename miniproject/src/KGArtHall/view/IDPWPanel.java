@@ -1,6 +1,8 @@
 package KGArtHall.view;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -11,8 +13,10 @@ import javax.swing.JTextField;
 public class IDPWPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	IDPWPanel(){
+	private Display view;
+	IDPWPanel(Display view){
 		
+		this.view = view;
 		JLabel id = new JLabel("ID");
 		JLabel pw = new JLabel("PW");
 		
@@ -22,6 +26,12 @@ public class IDPWPanel extends JPanel {
 		JButton regist = new JButton("회원가입");
 		JButton registinfo = new JButton("예매 정보");
 		
+		regist.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				view.change("membershippanel");
+			}
+		});
 		id.setBounds(40, 20, 100, 40);
 		pw.setBounds(40, 75, 100, 40);
 		

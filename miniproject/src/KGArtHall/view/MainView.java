@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class MainView extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	MainView(){
+	MainView(Display view){
 		Image image = Toolkit.getDefaultToolkit().createImage("image\\Title.png");
 		JButton title = new JButton(new ImageIcon(image));
 		title.setHorizontalAlignment(JLabel.CENTER);
@@ -24,7 +24,7 @@ public class MainView extends JPanel {
 		MenuPanel menu = new MenuPanel();
 		add(menu);
 		
-		IDPWPanel idpw = new IDPWPanel();
+		IDPWPanel idpw = new IDPWPanel(view);
 		add(idpw);
 		
 		PosterPanel poster = new PosterPanel();
