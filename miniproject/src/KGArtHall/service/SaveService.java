@@ -27,4 +27,19 @@ public class SaveService {
 			DBResourceReturn.close(conn);
 		}
 	}
+	
+	public boolean service(String ch, String var) {
+		Connection conn = null;
+		boolean check = true;
+		try {
+			conn = DBConnection.getConn();
+			UserInfoDao userinfoDao = UserInfoDao.getInstance();
+			check = userinfoDao.overlapcheck(conn, ch, var);
+		} catch(SQLException e) {
+			System.out.println("저장 실패");
+		} finally {
+			DBResourceReturn.close(conn);
+		}
+		return check;
+	}
 }

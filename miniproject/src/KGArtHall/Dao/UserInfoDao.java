@@ -2,6 +2,7 @@ package KGArtHall.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import KGArtHall.model.UserInfo;
@@ -28,5 +29,30 @@ public class UserInfoDao {
 		} finally {
 			DBResourceReturn.close(pstmt);
 		}
+	}
+	
+	public boolean overlapcheck(Connection conn, String ch, String var) throws SQLException {
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			boolean check = true;
+			try {
+				if(var.equals("ID")) {
+					pstmt = conn.prepareStatement("SELECT ID FROM KGART_USERINFO");
+				} else if(var.equals("TEL")) {
+					pstmt = conn.prepareStatement("SELECT TEL FROM KGART_USERINFO");
+				}
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					String dbch = rs.getString(1);
+					if(dbch.equals(ch)) {
+						System.out.println(var + "가 중복됩니다.");
+						check = false;	break;
+					}
+				}
+		} finally{
+			DBResourceReturn.close(rs);
+			DBResourceReturn.close(pstmt);
+		}
+		return check;
 	}
 }
