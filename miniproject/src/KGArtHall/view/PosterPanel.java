@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 public class PosterPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	PosterPanel(){	
+	PosterPanel(Display view){	
 		
 		JTextField tf = new JTextField();
 	
@@ -88,33 +88,39 @@ public class PosterPanel extends JPanel {
 		setVisible(true);
 		
 		a.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				view.change("infopagoda");
 			}
 		});
 		b.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+				view.change("infojawsbar");
 			}
 		});
 		c.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				view.change("infomarathon");
 			}
 		});
 		d.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				view.change("infobasketball");
 			}
 		});
 		e.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				view.change("infothisjava");
 			}
 		});
 		f.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				view.change("infopresentation");
 			}
 		});
 

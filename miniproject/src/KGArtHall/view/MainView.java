@@ -17,7 +17,7 @@ public class MainView extends JPanel {
 		idpw = new IDPWPanel(view);
 		add(idpw);
 		
-		PosterPanel poster = new PosterPanel();
+		PosterPanel poster = new PosterPanel(view);
 		add(poster);
 		
 		setSize(1280, 960);
@@ -34,7 +34,7 @@ public class MainView extends JPanel {
 		
 		add(loginpanel);
 		
-		PosterPanel poster = new PosterPanel();
+		PosterPanel poster = new PosterPanel(view);
 		add(poster);
 		
 		setSize(1280, 960);

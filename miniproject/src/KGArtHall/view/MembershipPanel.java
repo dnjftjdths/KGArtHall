@@ -83,8 +83,7 @@ public class MembershipPanel extends JPanel {
 				boolean idfinish = inputid.isEditable();
 				SaveService saveservice = SaveService.getInstance();
 				boolean telcheck = saveservice.service(userinfo.getTel(), "TEL");
-				registcheck(view, userinfo, new String(inputrepw.getPassword()), idfinish, telcheck);
-				saveservice.save(userinfo);
+				registcheck(view, userinfo, new String(inputrepw.getPassword()), idfinish, telcheck, saveservice);
 			}
 		});
 		overlapid.addActionListener(new ActionListener() {
@@ -128,7 +127,7 @@ public class MembershipPanel extends JPanel {
 		setVisible(true);
 	}
 
-	public static void registcheck(Display view ,UserInfo userinfo, String inputrepw, boolean idfinish, boolean telcheck) {
+	public static void registcheck(Display view ,UserInfo userinfo, String inputrepw, boolean idfinish, boolean telcheck, SaveService saveservice) {
 		if(userinfo.getName().equals("")) {
 			JOptionPane.showMessageDialog(null, "이름을 입력해주세요.", "Message", JOptionPane.WARNING_MESSAGE);
 		} else if(userinfo.getId().equals("")) {
@@ -146,6 +145,7 @@ public class MembershipPanel extends JPanel {
 		} else if(telcheck == false) {
 			JOptionPane.showMessageDialog(null, "이미 등록된 전화번호입니다.", "Message", JOptionPane.WARNING_MESSAGE);
 		} else {
+			saveservice.save(userinfo);
 			JOptionPane.showMessageDialog(null, "가입이 완료되었습니다.");
 			view.change("mainview");
 			setblank();

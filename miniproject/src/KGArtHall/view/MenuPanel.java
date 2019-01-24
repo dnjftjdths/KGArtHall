@@ -17,7 +17,7 @@ public class MenuPanel extends JPanel {
 		setLayout(new GridBagLayout());
 		JMenuBar mb = new JMenuBar();		
 		JMenu date = new JMenu("계절");
-		JMenu genre = new JMenu("장르");
+		JMenu kind = new JMenu("종류");
 		JMenu price = new JMenu("가격");
 		
 		JMenu spring = new JMenu("봄");
@@ -38,28 +38,30 @@ public class MenuPanel extends JPanel {
 		JMenuItem nov = new JMenuItem("11월");
 		JMenuItem dec = new JMenuItem("12월");
 
-		JMenuItem thrill = new JMenuItem("공포/스릴러");
-		JMenuItem romance = new JMenuItem("멜로");
-		JMenuItem comic = new JMenuItem("코믹");
+		JMenuItem play = new JMenuItem("연극");
+		JMenuItem concert = new JMenuItem("콘서트");
+		JMenuItem experience = new JMenuItem("체험");
+		JMenuItem event = new JMenuItem("행사");
 		
 		JMenuItem one = new JMenuItem("1만원 대");
 		JMenuItem three = new JMenuItem("3만원 대");
 		JMenuItem five = new JMenuItem("5만원 대");
 		
 		Dimension size = new Dimension(400, 20);
-		date.setPreferredSize(size);	genre.setPreferredSize(size);	price.setPreferredSize(size);
+		date.setPreferredSize(size);	kind.setPreferredSize(size);	price.setPreferredSize(size);
 		spring.setPreferredSize(size); summer.setPreferredSize(size); 
 		autumn.setPreferredSize(size); winter.setPreferredSize(size);
-		thrill.setPreferredSize(size); romance.setPreferredSize(size); comic.setPreferredSize(size);
+		play.setPreferredSize(size); concert.setPreferredSize(size); experience.setPreferredSize(size);
+		event.setPreferredSize(size);
 		one.setPreferredSize(size); three.setPreferredSize(size); five.setPreferredSize(size);
 		date.add(spring);	date.add(summer);	date.add(autumn); date.add(winter);
 		spring.add(mar);	spring.add(api);	spring.add(may);
 		summer.add(jun);	summer.add(jul);	summer.add(aug);
 		autumn.add(sep);	autumn.add(oct);	autumn.add(nov);
 		winter.add(dec);	winter.add(jan);	winter.add(feb);
-		genre.add(thrill);	genre.add(romance);		genre.add(comic);
+		kind.add(play);	kind.add(concert);		kind.add(experience);	kind.add(event);
 		price.add(one);	price.add(three); price.add(five);
-		mb.add(date);	mb.add(genre);	mb.add(price);
+		mb.add(date);	mb.add(kind);	mb.add(price);
 		
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.fill = GridBagConstraints.HORIZONTAL;
