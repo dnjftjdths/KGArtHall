@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.main;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 public class TitlePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	Display view;
-	TitlePanel(Display view) {
+	public TitlePanel(Display view) {
 		Image image = Toolkit.getDefaultToolkit().createImage("image\\Title.png");
 		JButton title = new JButton(new ImageIcon(image));
 		title.addActionListener(new ActionListener() {

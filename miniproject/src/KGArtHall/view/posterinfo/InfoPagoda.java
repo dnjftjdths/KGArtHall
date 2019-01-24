@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.posterinfo;
 
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -8,12 +8,16 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import KGArtHall.view.main.Display;
+import KGArtHall.view.main.TitlePanel;
 
 public class InfoPagoda extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
-	InfoPagoda(Display view){
+	public InfoPagoda(Display view){
 		Image image1 = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
 		JButton reservation = new JButton("예매");
 		reservation.setBounds(700,600,100,50);
@@ -51,7 +55,12 @@ public class InfoPagoda extends JPanel{
 		reservation.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				view.change("reservepagoda");
+				if(view.login == 1) {
+					view.change("reservepagoda");
+				} else if(view.login == 0){
+					JOptionPane.showMessageDialog(null, "로그인을 먼저 해주세요.", "Message", JOptionPane.WARNING_MESSAGE);
+					view.change("mainview");
+				}
 			}
 		});
 		add(reservation);

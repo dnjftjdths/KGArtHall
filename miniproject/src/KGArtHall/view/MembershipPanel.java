@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 
 import KGArtHall.model.UserInfo;
 import KGArtHall.service.SaveService;
+import KGArtHall.view.main.Display;
+import KGArtHall.view.main.TitlePanel;
 
 public class MembershipPanel extends JPanel {
 
@@ -25,7 +27,7 @@ public class MembershipPanel extends JPanel {
 	static JTextField inputemail = new JTextField("");
 	static JTextField inputadd = new JTextField("");
 	
-	MembershipPanel(Display view) {
+	public MembershipPanel(Display view) {
 
 		TitlePanel title = new TitlePanel(view);
 		JLabel name = new JLabel("*¿Ã∏ß");

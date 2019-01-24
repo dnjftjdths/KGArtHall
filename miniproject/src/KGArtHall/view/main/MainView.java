@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.main;
 
 import javax.swing.JPanel;
 

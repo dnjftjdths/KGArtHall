@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.posterinfo;
 
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -8,10 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import KGArtHall.view.main.Display;
+import KGArtHall.view.main.TitlePanel;
+
 public class InfoBasketball extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
-	InfoBasketball(Display view){
+	public InfoBasketball(Display view){
 		Image image4 = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
 		JButton reservation4 = new JButton("¿¹¸Å");
 		reservation4.setBounds(700,600,100,50);

@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.reserve;
 
 import java.awt.Font;
 import java.util.Calendar;
@@ -10,24 +10,27 @@ import javax.swing.JPanel;
 
 import com.toedter.calendar.JDateChooser;
 
-public class ReserveMarathon extends JPanel {
+import KGArtHall.view.main.Display;
+import KGArtHall.view.main.TitlePanel;
+
+public class ReserveJawsbar extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JDateChooser dateChooser;
 
 	Display view;
-	public ReserveMarathon(Display view) {
+	public ReserveJawsbar(Display view) {
 		setLayout(null);
 		
 		TitlePanel title = new TitlePanel(view);
 		add(title);
 		JDateChooser dateChooser = new JDateChooser();
 		Calendar maxcal = Calendar.getInstance();
-		maxcal.set(2019, 5-1, 31);
+		maxcal.set(2020, 2-1, 29);
 		Date max = new Date(maxcal.getTimeInMillis()); // Date(long date)
 		dateChooser.setMaxSelectableDate(max);
 		
 		Calendar mincal = Calendar.getInstance();
-		mincal.set(2019, 3-1, 1);
+		mincal.set(2019, 12-1, 1);
 		Date min = new Date(mincal.getTimeInMillis());
 		dateChooser.setMinSelectableDate(min);
 		dateChooser.setDate(min);

@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.main;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;

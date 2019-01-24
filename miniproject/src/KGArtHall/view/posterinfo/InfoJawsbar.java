@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.posterinfo;
 
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -8,10 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import KGArtHall.view.main.Display;
+import KGArtHall.view.main.TitlePanel;
+
 public class InfoJawsbar extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
-	InfoJawsbar(Display view){
+	public InfoJawsbar(Display view){
 		Image image2 = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
 		JButton reservation2 = new JButton("¿¹¸Å");
 		reservation2.setBounds(700,600,100,50);

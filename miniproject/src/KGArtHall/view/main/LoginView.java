@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.main;
 
 public class LoginView {
 

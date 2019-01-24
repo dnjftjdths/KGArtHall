@@ -1,4 +1,4 @@
-package KGArtHall.view;
+package KGArtHall.view.main;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -24,6 +24,7 @@ public class LoginPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				// view.mainview.loginpanel.setVisible(false);
 				view.change("mainview");
+				view.login = 0;
 				IDPWPanel.inputid.setText("");
 				IDPWPanel.inputpw.setText("");
 			}

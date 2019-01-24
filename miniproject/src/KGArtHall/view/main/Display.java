@@ -1,6 +1,16 @@
-package KGArtHall.view;
+package KGArtHall.view.main;
 
 import javax.swing.JFrame;
+
+import KGArtHall.view.MembershipPanel;
+import KGArtHall.view.PayPanel;
+import KGArtHall.view.posterinfo.InfoBasketball;
+import KGArtHall.view.posterinfo.InfoJawsbar;
+import KGArtHall.view.posterinfo.InfoMarathon;
+import KGArtHall.view.posterinfo.InfoPagoda;
+import KGArtHall.view.posterinfo.InfoPresentation;
+import KGArtHall.view.posterinfo.InfoThisjava;
+import KGArtHall.view.reserve.ReservePagoda;
 
 public class Display extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -15,6 +25,8 @@ public class Display extends JFrame {
 	public InfoThisjava infothisjava = null;
 	public InfoPresentation infopresentation = null;
 	public ReservePagoda reservepagoda = null;
+	public PayPanel paypanel = null;
+	public int login = 0;
 	
 	public static void main(String[] args) {
 		Display view = new Display();
@@ -30,6 +42,7 @@ public class Display extends JFrame {
 		view.infothisjava = new InfoThisjava(view);
 		view.infopresentation = new InfoPresentation(view);
 		view.reservepagoda = new ReservePagoda(view);
+		view.paypanel = new PayPanel(view);
 		
 		view.setResizable(false);
 		view.setSize(1280, 960);
@@ -83,6 +96,13 @@ public class Display extends JFrame {
 		} else if(panelName.equals("reservepagoda")) {
 			getContentPane().removeAll();
 			getContentPane().add(reservepagoda);
+			reservepagoda.getDateChooser().setDate(reservepagoda.min);
+			reservepagoda.comboBox.setSelectedIndex(0);
+			revalidate();
+			repaint();
+		} else if(panelName.equals("paypanel")) {
+			getContentPane().removeAll();
+			getContentPane().add(paypanel);
 			revalidate();
 			repaint();
 		}
@@ -92,6 +112,7 @@ public class Display extends JFrame {
 	public void change(Display view, LoginPanel loginpanel) {
 		getContentPane().removeAll();
 		getContentPane().add(new MainView(view, loginpanel));
+		login = 1;
 		revalidate();
 		repaint();
 	}
