@@ -25,7 +25,7 @@ public class PosterPanel extends JPanel {
 		a.setBounds(450,250,200,250);
 		a.setMnemonic(KeyEvent.VK_1);
 		a.setBackground(Color.WHITE);
-		JLabel al = new JLabel("Title1");
+		JLabel al = new JLabel("파고다의 저주");
 		al.setBounds(450, 500, 200, 30);
 		al.setHorizontalAlignment(JLabel.CENTER);
 		
@@ -34,7 +34,7 @@ public class PosterPanel extends JPanel {
 		b.setBounds(700,250,200,250);
 		b.setMnemonic(KeyEvent.VK_1);
 		b.setBackground(Color.WHITE);
-		JLabel bl = new JLabel("Title2");
+		JLabel bl = new JLabel("이 겨울, 눈꽃 머금은 죠스바");
 		bl.setBounds(700, 500, 200, 30);
 		bl.setHorizontalAlignment(JLabel.CENTER);
 		
@@ -43,7 +43,7 @@ public class PosterPanel extends JPanel {
 		c.setBounds(950,250,200,250); 
 		c.setMnemonic(KeyEvent.VK_1);
 		c.setBackground(Color.WHITE);
-		JLabel cl = new JLabel("Title3");
+		JLabel cl = new JLabel("Green Marathon");
 		cl.setBounds(950, 500, 200, 30);
 		cl.setHorizontalAlignment(JLabel.CENTER);
 
@@ -52,7 +52,7 @@ public class PosterPanel extends JPanel {
 		d.setBounds(700,550,200,250);
 		d.setMnemonic(KeyEvent.VK_1);
 		d.setBackground(Color.WHITE);
-		JLabel dl = new JLabel("Title4");
+		JLabel dl = new JLabel("이것이 자바다");
 		dl.setBounds(450, 800, 200, 30);
 		dl.setHorizontalAlignment(JLabel.CENTER);
 		
@@ -61,7 +61,7 @@ public class PosterPanel extends JPanel {
 		e.setBounds(450,550,200,250);
 		e.setMnemonic(KeyEvent.VK_1);
 		e.setBackground(Color.WHITE);
-		JLabel el = new JLabel("Title5");
+		JLabel el = new JLabel("신장이 아닌, 심장으로");
 		el.setBounds(700, 800, 200, 30);
 		el.setHorizontalAlignment(JLabel.CENTER);
 		
@@ -70,7 +70,7 @@ public class PosterPanel extends JPanel {
 		f.setBounds(950,550,200,250);
 		f.setMnemonic(KeyEvent.VK_1);
 		f.setBackground(Color.WHITE);
-		JLabel fl = new JLabel("Title6");
+		JLabel fl = new JLabel("프로젝트 발표회");
 		fl.setBounds(950, 800, 200, 30);
 		fl.setHorizontalAlignment(JLabel.CENTER);
 		

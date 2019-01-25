@@ -20,6 +20,7 @@ public class IDPWPanel extends JPanel {
 	static JTextField inputid = new JTextField();
 	static JPasswordField inputpw = new JPasswordField();
 
+	LoginPanel loginpanel = null;
 	IDPWPanel(Display view) {
 
 		this.view = view;
@@ -46,7 +47,7 @@ public class IDPWPanel extends JPanel {
 				int n = loginservice.login(IDinput, PWinput);
 				loginmessage(n);
 				if (n == 1) {
-					LoginPanel loginpanel = new LoginPanel(view, loginservice.name);
+					loginpanel = new LoginPanel(view, loginservice.name);
 					view.change(view, loginpanel);
 				}
 			}

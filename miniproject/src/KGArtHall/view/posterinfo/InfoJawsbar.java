@@ -2,10 +2,13 @@ package KGArtHall.view.posterinfo;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import KGArtHall.view.main.Display;
@@ -16,8 +19,8 @@ public class InfoJawsbar extends JPanel{
 	
 	public InfoJawsbar(Display view){
 		Image image2 = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
-		JButton reservation2 = new JButton("예매");
-		reservation2.setBounds(700,600,100,50);
+		JButton reservation = new JButton("예매");
+		reservation.setBounds(700,600,100,50);
 		
 		JLabel b = new JLabel(new ImageIcon(image2));
 		b.setBounds(100,200,200,250);
@@ -49,8 +52,19 @@ public class InfoJawsbar extends JPanel{
 		binfo5.setFont(binfo5.getFont().deriveFont(20.0f));
 		binfo6.setFont(binfo6.getFont().deriveFont(20.0f));
 		
+		reservation.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(view.login == 1) {
+					view.change("reservejawsbar");
+				} else if(view.login == 0){
+					JOptionPane.showMessageDialog(null, "로그인을 먼저 해주세요.", "Message", JOptionPane.WARNING_MESSAGE);
+					view.change("mainview");
+				}
+			}
+		});
 		
-		add(reservation2);
+		add(reservation);
 		add(title);
 		add(b);
 		add(binfo1); add(binfo2); add(binfo3); add(binfo4); add(binfo5); add(binfo6);

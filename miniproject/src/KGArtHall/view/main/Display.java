@@ -10,6 +10,9 @@ import KGArtHall.view.posterinfo.InfoMarathon;
 import KGArtHall.view.posterinfo.InfoPagoda;
 import KGArtHall.view.posterinfo.InfoPresentation;
 import KGArtHall.view.posterinfo.InfoThisjava;
+import KGArtHall.view.reserve.ReserveBasketball;
+import KGArtHall.view.reserve.ReserveJawsbar;
+import KGArtHall.view.reserve.ReserveMarathon;
 import KGArtHall.view.reserve.ReservePagoda;
 
 public class Display extends JFrame {
@@ -25,6 +28,9 @@ public class Display extends JFrame {
 	public InfoThisjava infothisjava = null;
 	public InfoPresentation infopresentation = null;
 	public ReservePagoda reservepagoda = null;
+	public ReserveJawsbar reservejawsbar = null;
+	public ReserveMarathon reservemarathon = null;
+	public ReserveBasketball reservebasketball = null;
 	public PayPanel paypanel = null;
 	public int login = 0;
 	
@@ -42,6 +48,9 @@ public class Display extends JFrame {
 		view.infothisjava = new InfoThisjava(view);
 		view.infopresentation = new InfoPresentation(view);
 		view.reservepagoda = new ReservePagoda(view);
+		view.reservejawsbar = new ReserveJawsbar(view);
+		view.reservemarathon = new ReserveMarathon(view);
+		view.reservebasketball = new ReserveBasketball(view);
 		view.paypanel = new PayPanel(view);
 		
 		view.setResizable(false);
@@ -100,7 +109,28 @@ public class Display extends JFrame {
 			reservepagoda.comboBox.setSelectedIndex(0);
 			revalidate();
 			repaint();
-		} else if(panelName.equals("paypanel")) {
+		} else if(panelName.equals("reservejawsbar")) {
+			getContentPane().removeAll();
+			getContentPane().add(reservejawsbar);
+			reservejawsbar.getDateChooser().setDate(reservejawsbar.min);
+			reservejawsbar.comboBox.setSelectedIndex(0);
+			revalidate();
+			repaint();
+		} else if(panelName.equals("reservemarathon")) {
+			getContentPane().removeAll();
+			getContentPane().add(reservemarathon);
+			reservemarathon.getDateChooser().setDate(reservemarathon.min);
+			reservemarathon.comboBox.setSelectedIndex(0);
+			revalidate();
+			repaint();
+		} else if(panelName.equals("reservebasketball")) {
+			getContentPane().removeAll();
+			getContentPane().add(reservebasketball);
+			reservebasketball.getDateChooser().setDate(reservebasketball.min);
+			reservebasketball.comboBox.setSelectedIndex(0);
+			revalidate();
+			repaint();
+		}else if(panelName.equals("paypanel")) {
 			getContentPane().removeAll();
 			getContentPane().add(paypanel);
 			revalidate();

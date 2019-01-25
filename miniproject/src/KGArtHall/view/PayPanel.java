@@ -1,19 +1,24 @@
 package KGArtHall.view;
 
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import KGArtHall.service.TelService;
 import KGArtHall.view.main.Display;
 import KGArtHall.view.main.TitlePanel;
 
-import javax.swing.JButton;
-import java.awt.Font;
-
 public class PayPanel extends JPanel {
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField inputtel;
+	private JPasswordField inputpw;
+	
 
 	public PayPanel(Display view) {
 		setLayout(null);
@@ -33,18 +38,37 @@ public class PayPanel extends JPanel {
 		
 		JButton btnNewButton = new JButton("\uACB0\uC81C\uC644\uB8CC");
 		btnNewButton.setBounds(669, 484, 142, 39);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String TELinput = inputtel.getText();
+				String PWinput = new String(inputpw.getPassword());
+				TelService telservice = TelService.getInstance();
+				int n = telservice.telpw(TELinput,PWinput);
+				if ( n == 1) {
+					System.out.println("결제가 완료되었습니다.");
+					JOptionPane.showMessageDialog(null, "결제가 완료되었습니다.");
+					TicketFrame ticket = new TicketFrame();
+					ticket.setVisible(true);
+				} else if( n == 0 ) {
+					JOptionPane.showMessageDialog(null, "정보가 올바르지 않습니다.", "Message", JOptionPane.WARNING_MESSAGE);
+				}
+			}
+		});
+		
 		add(btnNewButton);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("굴림", Font.PLAIN, 20));
-		textField_1.setBounds(620, 300, 194, 39);
-		add(textField_1);
-		textField_1.setColumns(10);
+		inputtel = new JTextField();
+		inputtel.setFont(new Font("굴림", Font.PLAIN, 20));
+		inputtel.setBounds(620, 300, 194, 39);
+		add(inputtel);
+		inputtel.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(620, 379, 194, 39);
-		add(textField_2);
-		textField_2.setColumns(10);
+		inputpw = new JPasswordField();
+		inputpw.setBounds(620, 379, 194, 39);
+		add(inputpw);
+		inputpw.setColumns(10);
 		
 		
 		add(title);

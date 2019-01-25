@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,6 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+
+import KGArtHall.view.main.Display;
+import KGArtHall.view.main.MainView;
 
 public class TicketFrame extends JFrame {
 
@@ -27,6 +32,7 @@ public class TicketFrame extends JFrame {
 				try {
 					TicketFrame frame = new TicketFrame();
 					frame.setTitle("Ticket");
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -79,6 +85,16 @@ public class TicketFrame extends JFrame {
 		
 		JButton printbutton = new JButton("\uCD9C\uB825");
 		printbutton.setBounds(468, 204, 97, 23);
+		printbutton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PrintLoading m = new PrintLoading();
+				m.setLocationRelativeTo(null);
+				m.setVisible(true);
+				m.iterate();
+				// JOptionPane.showMessageDialog(null, "티켓이 출력되었습니다.");
+			}
+		});
 		contentPane.add(printbutton);
 	}
 }

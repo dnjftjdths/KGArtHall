@@ -2,10 +2,13 @@ package KGArtHall.view.posterinfo;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import KGArtHall.view.main.Display;
@@ -16,8 +19,8 @@ public class InfoMarathon extends JPanel{
 	
 	public InfoMarathon(Display view){
 		Image image3 = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
-		JButton reservation3 = new JButton("예매");
-		reservation3.setBounds(700,600,100,50);
+		JButton reservation = new JButton("예매");
+		reservation.setBounds(700,600,100,50);
 		
 		JLabel c = new JLabel(new ImageIcon(image3));
 		c.setBounds(100,200,200,250);
@@ -49,8 +52,19 @@ public class InfoMarathon extends JPanel{
 		cinfo5.setFont(cinfo5.getFont().deriveFont(20.0f));
 		cinfo6.setFont(cinfo6.getFont().deriveFont(20.0f));
 				
-				
-		add(reservation3);
+		reservation.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(view.login == 1) {
+					view.change("reservemarathon");
+				} else if(view.login == 0){
+					JOptionPane.showMessageDialog(null, "로그인을 먼저 해주세요.", "Message", JOptionPane.WARNING_MESSAGE);
+					view.change("mainview");
+				}
+			}
+		});
+		
+		add(reservation);
 		add(title);
 		add(c);
 		add(cinfo1); add(cinfo2); add(cinfo3); add(cinfo4); add(cinfo5); add(cinfo6);
