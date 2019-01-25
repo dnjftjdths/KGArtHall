@@ -23,7 +23,7 @@ import com.toedter.calendar.JDateChooser;
 import KGArtHall.view.main.Display;
 import KGArtHall.view.main.TitlePanel;
 
-public class ReserveBasketball extends JPanel {
+public class ReserveThisjava extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JDateChooser dateChooser;
 
@@ -31,19 +31,19 @@ public class ReserveBasketball extends JPanel {
 	public Date min;
 	public JComboBox comboBox;
 
-	public ReserveBasketball(Display view) {
+	public ReserveThisjava(Display view) {
 		setLayout(null);
 		TitlePanel title = new TitlePanel(view);
 		add(title);
 
 		dateChooser = new JDateChooser();
 		Calendar maxcal = Calendar.getInstance();
-		maxcal.set(2019, 11 - 1, 31);
+		maxcal.set(2019, 8 - 1, 31);
 		Date max = new Date(maxcal.getTimeInMillis()); // Date(long date)
 		dateChooser.setMaxSelectableDate(max);
 
 		Calendar mincal = Calendar.getInstance();
-		mincal.set(2019, 9 - 1, 1);
+		mincal.set(2019, 6 - 1, 1);
 		min = new Date(mincal.getTimeInMillis());
 		dateChooser.setMinSelectableDate(min);
 		dateChooser.setDate(min);
@@ -57,7 +57,7 @@ public class ReserveBasketball extends JPanel {
 		paybutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				view.change(view, "paypanel", "basketball");
+				view.change(view, "paypanel", "thisjava");
 			}
 		});
 
@@ -79,7 +79,7 @@ public class ReserveBasketball extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int num = Integer.parseInt(comboBox.getSelectedItem().toString());
-				pricelabel.setText("가격 : 10,000 X " + num + " = " + df.format(10000 * num) + "원");
+				pricelabel.setText("가격 : 50,000 X " + num + " = " + df.format(50000 * num) + "원");
 			}
 		});
 
@@ -135,7 +135,7 @@ public class ReserveBasketball extends JPanel {
 		backbutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				view.change("infobasketball");
+				view.change("infothisjava");
 			}
 		});
 		setVisible(true);

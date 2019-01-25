@@ -57,7 +57,7 @@ public class ReserveJawsbar extends JPanel {
 		paybutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				view.change("paypanel");
+				view.change(view, "paypanel", "jawsbar");
 			}
 		});
 

@@ -20,7 +20,7 @@ public class PayPanel extends JPanel {
 	private JPasswordField inputpw;
 	
 
-	public PayPanel(Display view) {
+	public PayPanel(Display view, String name) {
 		setLayout(null);
 		
 		// 메인화면으로 이동
@@ -49,7 +49,8 @@ public class PayPanel extends JPanel {
 				if ( n == 1) {
 					System.out.println("결제가 완료되었습니다.");
 					JOptionPane.showMessageDialog(null, "결제가 완료되었습니다.");
-					TicketFrame ticket = new TicketFrame();
+					TicketFrame ticket = new TicketFrame(view);
+					ticket.setLocationRelativeTo(null);
 					ticket.setVisible(true);
 				} else if( n == 0 ) {
 					JOptionPane.showMessageDialog(null, "정보가 올바르지 않습니다.", "Message", JOptionPane.WARNING_MESSAGE);
@@ -70,7 +71,8 @@ public class PayPanel extends JPanel {
 		add(inputpw);
 		inputpw.setColumns(10);
 		
-		
+		BackPanel backpanel = new BackPanel(view, name);
+		add(backpanel);
 		add(title);
 		
 		setVisible(true);

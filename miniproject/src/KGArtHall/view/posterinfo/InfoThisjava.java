@@ -2,10 +2,13 @@ package KGArtHall.view.posterinfo;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import KGArtHall.view.main.Display;
@@ -49,6 +52,17 @@ public class InfoThisjava extends JPanel{
 		einfo5.setFont(einfo5.getFont().deriveFont(20.0f));
 		einfo6.setFont(einfo6.getFont().deriveFont(20.0f));
 		
+		reservation.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(view.login == 1) {
+					view.change("reservethisjava");
+				} else if(view.login == 0){
+					JOptionPane.showMessageDialog(null, "로그인을 먼저 해주세요.", "Message", JOptionPane.WARNING_MESSAGE);
+					view.change("mainview");
+				}
+			}
+		});	
 		
 		add(reservation);
 		add(title);

@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 
+import KGArtHall.view.main.Display;
+
 
 public class PrintLoading extends JFrame {
 	JProgressBar jb;
@@ -36,15 +38,5 @@ public class PrintLoading extends JFrame {
 		});
 		iThread.start();
 		
-	}
-	
-	public static void main(String[] args) {
-		PrintLoading m = new PrintLoading();
-		m.setLocationRelativeTo(null);
-		m.setVisible(true);
-		m.iterate();
-		TicketFrame ticket = new TicketFrame();
-		ticket.setLocationRelativeTo(null);
-		ticket.setVisible(true);
 	}
 }

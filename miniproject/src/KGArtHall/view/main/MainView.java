@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 public class MainView extends JPanel {
 	private static final long serialVersionUID = 1L;
 	int login = 0;
-	IDPWPanel idpw = null;
+	public IDPWPanel idpw = null;
 	
 	MainView(Display view){
 		TitlePanel title = new TitlePanel(view);
