@@ -45,7 +45,7 @@ public class PayPanel extends JPanel {
 				String TELinput = inputtel.getText();
 				String PWinput = new String(inputpw.getPassword());
 				TelService telservice = TelService.getInstance();
-				int n = telservice.telpw(TELinput,PWinput);
+				int n = telservice.telpw(TELinput,PWinput, view.loginid);
 				if ( n == 1) {
 					System.out.println("결제가 완료되었습니다.");
 					JOptionPane.showMessageDialog(null, "결제가 완료되었습니다.");

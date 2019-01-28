@@ -24,7 +24,7 @@ public class LoginPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				// view.mainview.loginpanel.setVisible(false);
 				view.change("mainview");
-				view.login = 0;
+				view.loginid = "";
 				IDPWPanel.inputid.setText("");
 				IDPWPanel.inputpw.setText("");
 			}

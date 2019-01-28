@@ -33,6 +33,9 @@ public class ReservePagoda extends JPanel {
 	public Date min;
 	public JComboBox comboBox;
 
+	public Date reservedate;
+	public int reservenumber;
+	
 	public ReservePagoda(Display view) {
 		setLayout(null);
 		TitlePanel title = new TitlePanel(view);
@@ -59,6 +62,8 @@ public class ReservePagoda extends JPanel {
 		paybutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				reservedate = dateChooser.getDate();
+				reservenumber = Integer.parseInt(comboBox.getSelectedItem().toString());
 				view.change(view, "paypanel", "pagoda");
 			}
 		});
@@ -93,34 +98,34 @@ public class ReservePagoda extends JPanel {
 		numlabel.setBounds(542, 349, 57, 29);
 		add(numlabel);
 
-		Image poster = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
+		Image poster = Toolkit.getDefaultToolkit().createImage("image\\pagodainfo.png");
 		JLabel posterlabel = new JLabel(new ImageIcon(poster));
 		posterlabel.setBackground(Color.WHITE);
 		posterlabel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		posterlabel.setBounds(117, 256, 326, 388);
+		posterlabel.setBounds(117, 170, 400, 500);
 		add(posterlabel);
 
 		String attention = "* 유의 사항\n- 교환 및 환불은 불가능합니다.\n"
 				+ "- 좌석은 선착순으로 배정됩니다.\n     티켓팅 : 공연 시작 1시간전\n     입장 : 공연 시작 20분 전";
 		JLabel attention1 = new JLabel("* 유의 사항");
 		attention1.setFont(new Font("나눔바른펜", Font.PLAIN, 20));
-		attention1.setBounds(182, 681, 138, 30);
+		attention1.setBounds(182, 700, 138, 30);
 
 		JLabel attention2 = new JLabel("- 교환 및 환불은 불가능합니다.");
 		attention2.setFont(new Font("나눔바른펜", Font.PLAIN, 15));
-		attention2.setBounds(195, 710, 326, 30);
+		attention2.setBounds(195, 730, 326, 30);
 
 		JLabel attention3 = new JLabel("- 좌석은 선착순으로 배정됩니다.");
 		attention3.setFont(new Font("나눔바른펜", Font.PLAIN, 15));
-		attention3.setBounds(195, 740, 326, 30);
+		attention3.setBounds(195, 760, 326, 30);
 
 		JLabel attention4 = new JLabel("     티켓팅 : 공연 시작 1시간전");
 		attention4.setFont(new Font("나눔바른펜", Font.PLAIN, 15));
-		attention4.setBounds(195, 770, 326, 30);
+		attention4.setBounds(195, 790, 326, 30);
 
 		JLabel attention5 = new JLabel("     입장 : 공연 시작 20분 전");
 		attention5.setFont(new Font("나눔바른펜", Font.PLAIN, 15));
-		attention5.setBounds(195, 800, 326, 30);
+		attention5.setBounds(195, 820, 326, 30);
 
 		add(attention1);
 		add(attention2);

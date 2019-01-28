@@ -18,12 +18,12 @@ public class InfoMarathon extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
 	public InfoMarathon(Display view){
-		Image image3 = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
+		Image image3 = Toolkit.getDefaultToolkit().createImage("image\\marathoninfo.png");
 		JButton reservation = new JButton("예매");
 		reservation.setBounds(700,600,100,50);
 		
 		JLabel c = new JLabel(new ImageIcon(image3));
-		c.setBounds(100,200,200,250);
+		c.setBounds(100,200,400,500);
 		
 		// 메인화면으로 이동
 		TitlePanel title = new TitlePanel(view);
@@ -55,9 +55,9 @@ public class InfoMarathon extends JPanel{
 		reservation.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(view.login == 1) {
+				if(!view.loginid.equals("")) {
 					view.change("reservemarathon");
-				} else if(view.login == 0){
+				} else {
 					JOptionPane.showMessageDialog(null, "로그인을 먼저 해주세요.", "Message", JOptionPane.WARNING_MESSAGE);
 					view.change("mainview");
 				}

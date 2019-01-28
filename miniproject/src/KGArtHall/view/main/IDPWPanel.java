@@ -44,11 +44,11 @@ public class IDPWPanel extends JPanel {
 				String IDinput = inputid.getText();
 				String PWinput = new String(inputpw.getPassword());
 				LoginService loginservice = LoginService.getInstance();
-				int n = loginservice.login(IDinput, PWinput);
-				loginmessage(n);
-				if (n == 1) {
+				String loginid = loginservice.login(IDinput, PWinput);
+				loginmessage(loginid);
+				if (!loginid.equals("") && !loginid.equals("wrongpw")) {
 					loginpanel = new LoginPanel(view, loginservice.name);
-					view.change(view, loginpanel);
+					view.change(view, loginpanel, loginid);
 				}
 			}
 		});
@@ -74,13 +74,13 @@ public class IDPWPanel extends JPanel {
 		setVisible(true);
 	}
 
-	public void loginmessage(int n) {
-		if (n == 0) {
+	public void loginmessage(String loginid) {
+		if (loginid.equals("")) {
 			JOptionPane.showMessageDialog(null, "등록되지 않은 아이디입니다.", "Message", JOptionPane.WARNING_MESSAGE);
-		} else if (n == 1) {
-			JOptionPane.showMessageDialog(null, "로그인이 완료되었습니다.");
-		} else if (n == 2) {
+		} else if (loginid.equals("wrongpw")) {
 			JOptionPane.showMessageDialog(null, "비밀번호가 틀렸습니다.", "Message", JOptionPane.WARNING_MESSAGE);
+		} else {
+			JOptionPane.showMessageDialog(null, "로그인이 완료되었습니다.");
 		}
 	}
 }

@@ -15,9 +15,9 @@ public class LoginService {
 	}
 	
 	public String name = "";
-	public int login(String id, String pw) {
+	public String login(String id, String pw) {
 		Connection conn = null;
-		int result = 0;
+		String result = "";
 		try {
 			conn = DBConnection.getConn();
 			LoginDao loginDao = LoginDao.getInstance();

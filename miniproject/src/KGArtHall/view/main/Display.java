@@ -36,8 +36,7 @@ public class Display extends JFrame {
 	public ReservePresentation reservepresentation = null;
 	public ReserveThisjava reservethisjava = null;
 	public PayPanel paypanel = null;
-	public int login = 0;
-	
+	public String loginid = "";
 
 	public static void main(String[] args) {
 		Display view = new Display();
@@ -154,10 +153,10 @@ public class Display extends JFrame {
 
 	}
 
-	public void change(Display view, LoginPanel loginpanel) {
+	public void change(Display view, LoginPanel loginpanel, String loginid) {
 		getContentPane().removeAll();
 		getContentPane().add(new MainView(view, loginpanel));
-		login = 1;
+		this.loginid = loginid;
 		revalidate();
 		repaint();
 	}

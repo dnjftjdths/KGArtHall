@@ -21,10 +21,10 @@ public class TitlePanel extends JPanel {
 		title.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg1) {
-				if (view.login == 0) {
+				if (view.loginid.equals("")) {
 					view.change("mainview");
-				} else if (view.login == 1) {
-					view.change(view, view.mainview.idpw.loginpanel);
+				} else {
+					view.change(view, view.mainview.idpw.loginpanel, view.loginid);
 				}
 			}
 		});

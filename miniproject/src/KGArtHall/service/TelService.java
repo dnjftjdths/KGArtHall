@@ -15,13 +15,13 @@ public class TelService {
 	}
 	
 	public String tel = "";
-	public int telpw(String tel,String pw) {
+	public int telpw(String tel,String pw, String loginid) {
 		Connection conn = null;
 		int result = 0;
 		try {
 			conn = DBConnection.getConn();
 			TelDao telDao = TelDao.getInstance();
-			result = telDao.telpw(conn,tel,pw);
+			result = telDao.telpw(conn,tel,pw,loginid);
 			
 		} catch(SQLException e) {
 			System.out.println("인증 실패");

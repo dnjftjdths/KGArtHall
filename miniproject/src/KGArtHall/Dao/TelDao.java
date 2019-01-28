@@ -17,22 +17,24 @@ public class TelDao {
 		return TelDao;
 	}
 
-	public int telpw(Connection conn, String tel, String pw) throws SQLException {
+	public int telpw(Connection conn, String tel, String pw, String loginid) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int result = 0;
 		try {
-			pstmt = conn.prepareStatement("SELECT TEL, PW FROM KGART_USERINFO");
+			pstmt = conn.prepareStatement("SELECT TEL, PW, ID FROM KGART_USERINFO");
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				String dbtel = rs.getString(1);
 				String dbpw = rs.getString(2);
-				if (dbtel.equals(tel) && dbpw.equals(pw)) {
-					System.out.println("결제가 완료되었습니다.");
-					result = 1;
-					break;
-				} else {
-					System.out.println("정보가 틀렷습니다.");
+				if (loginid.equals(rs.getString(3))) {
+					if (dbtel.equals(tel) && dbpw.equals(pw)) {
+						System.out.println("결제가 완료되었습니다.");
+						result = 1;
+						break;
+					} else {
+						System.out.println("정보가 틀렷습니다.");
+					}
 				}
 			}
 		} finally {

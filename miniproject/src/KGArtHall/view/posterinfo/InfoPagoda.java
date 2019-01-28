@@ -18,12 +18,12 @@ public class InfoPagoda extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
 	public InfoPagoda(Display view){
-		Image image1 = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
+		Image image1 = Toolkit.getDefaultToolkit().createImage("image\\pagodainfo.png");
 		JButton reservation = new JButton("예매");
 		reservation.setBounds(700,600,100,50);
 		
 		JLabel a = new JLabel(new ImageIcon(image1));
-		a.setBounds(100,200,200,250);
+		a.setBounds(100,200,400,500);
 		
 		// 메인화면으로 이동
 		TitlePanel title = new TitlePanel(view);
@@ -55,9 +55,9 @@ public class InfoPagoda extends JPanel{
 		reservation.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(view.login == 1) {
+				if(!view.loginid.equals("")) {
 					view.change("reservepagoda");
-				} else if(view.login == 0){
+				} else {
 					JOptionPane.showMessageDialog(null, "로그인을 먼저 해주세요.", "Message", JOptionPane.WARNING_MESSAGE);
 					view.change("mainview");
 				}

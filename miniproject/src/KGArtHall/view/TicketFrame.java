@@ -22,7 +22,6 @@ public class TicketFrame extends JFrame {
 
 	private JPanel contentPane;
 
-
 	public TicketFrame(Display view) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(600, 300);
@@ -81,10 +80,10 @@ public class TicketFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				if (view.login == 0) {
+				if (view.loginid.equals("")) {
 					view.change("mainview");
-				} else if (view.login == 1) {
-					view.change(view, view.mainview.idpw.loginpanel);
+				} else {
+					view.change(view, view.mainview.idpw.loginpanel, view.loginid);
 				}
 			}
 		});
