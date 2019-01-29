@@ -45,6 +45,7 @@ public class Display extends JFrame {
 	public String loginid = "";
 	public Date reservedate;
 	public int reservenumber;
+	public String reserveno;
 	
 	public static void main(String[] args) {
 		Display view = new Display();

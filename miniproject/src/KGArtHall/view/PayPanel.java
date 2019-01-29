@@ -55,7 +55,7 @@ public class PayPanel extends JPanel {
 					reserveinfo.setDate(view.reservedate);
 					reserveinfo.setNumber(view.reservenumber);
 					ReserveService reserveService = ReserveService.getInstance();
-					reserveService.reserve(reserveinfo);
+					view.reserveno = name.toUpperCase() + reserveService.reserve(reserveinfo);
 					System.out.println("결제가 완료되었습니다.");
 					JOptionPane.showMessageDialog(null, "결제가 완료되었습니다.");
 					TicketFrame ticket = new TicketFrame(view, name);

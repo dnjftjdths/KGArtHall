@@ -54,7 +54,7 @@ public class TicketFrame extends JFrame {
 		placelabel.setBounds(249, 115, 211, 15);
 		ticketpanel.add(placelabel);
 
-		JLabel numlabel = new JLabel("\uC608\uB9E4 \uBC88\uD638 : ");
+		JLabel numlabel = new JLabel("\uC608\uB9E4 \uBC88\uD638 : " + view.reserveno);
 		numlabel.setBounds(249, 61, 211, 15);
 		ticketpanel.add(numlabel);
 
