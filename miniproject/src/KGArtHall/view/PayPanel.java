@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import KGArtHall.model.ReserveInfo;
+import KGArtHall.service.ReserveService;
 import KGArtHall.service.TelService;
 import KGArtHall.view.main.Display;
 import KGArtHall.view.main.TitlePanel;
@@ -46,10 +48,17 @@ public class PayPanel extends JPanel {
 				String PWinput = new String(inputpw.getPassword());
 				TelService telservice = TelService.getInstance();
 				int n = telservice.telpw(TELinput,PWinput, view.loginid);
-				if ( n == 1) {
+				if ( n == 1 ) {
+					ReserveInfo reserveinfo = new ReserveInfo();
+					reserveinfo.setId(view.loginid);
+					reserveinfo.setName(name);
+					reserveinfo.setDate(view.reservedate);
+					reserveinfo.setNumber(view.reservenumber);
+					ReserveService reserveService = ReserveService.getInstance();
+					reserveService.reserve(reserveinfo);
 					System.out.println("결제가 완료되었습니다.");
 					JOptionPane.showMessageDialog(null, "결제가 완료되었습니다.");
-					TicketFrame ticket = new TicketFrame(view);
+					TicketFrame ticket = new TicketFrame(view, name);
 					ticket.setLocationRelativeTo(null);
 					ticket.setVisible(true);
 				} else if( n == 0 ) {

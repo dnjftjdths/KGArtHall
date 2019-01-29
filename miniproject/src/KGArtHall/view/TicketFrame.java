@@ -1,12 +1,12 @@
 package KGArtHall.view;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,8 +21,10 @@ import KGArtHall.view.main.Display;
 public class TicketFrame extends JFrame {
 
 	private JPanel contentPane;
-
-	public TicketFrame(Display view) {
+	public static String ticketname = "";
+	public static String ticketplace = "";
+	
+	public TicketFrame(Display view, String name) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(600, 300);
 		contentPane = new JPanel();
@@ -36,17 +38,19 @@ public class TicketFrame extends JFrame {
 		contentPane.add(ticketpanel);
 		ticketpanel.setBorder(new LineBorder(new Color(221, 160, 221), 4));
 		ticketpanel.setLayout(null);
-
-		JLabel Titlelabel = new JLabel("\uD30C\uACE0\uB2E4\uC758 \uC800\uC8FC");
+		
+		ticketchange(name);
+		JLabel Titlelabel = new JLabel(ticketname);
 		Titlelabel.setFont(new Font("굴림", Font.BOLD, 15));
-		Titlelabel.setBounds(190, 22, 148, 29);
+		Titlelabel.setBounds(190, 22, 300, 29);
 		ticketpanel.add(Titlelabel);
 
-		JLabel datelabel = new JLabel("\uC77C\uC2DC : ");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MMM dd일 E요일");
+		JLabel datelabel = new JLabel("\uC77C\uC2DC : " + sdf.format(view.reservedate));
 		datelabel.setBounds(249, 90, 211, 15);
 		ticketpanel.add(datelabel);
 
-		JLabel placelabel = new JLabel("\uC7A5\uC18C : ");
+		JLabel placelabel = new JLabel("\uC7A5\uC18C : " + ticketplace);
 		placelabel.setBounds(249, 115, 211, 15);
 		ticketpanel.add(placelabel);
 
@@ -54,7 +58,7 @@ public class TicketFrame extends JFrame {
 		numlabel.setBounds(249, 61, 211, 15);
 		ticketpanel.add(numlabel);
 
-		Image poster = Toolkit.getDefaultToolkit().createImage("image\\posterimage1.png");
+		Image poster = Toolkit.getDefaultToolkit().createImage("image\\ticket" + name +".png");
 		JLabel posterlabel = new JLabel(new ImageIcon(poster));
 		posterlabel.setBackground(Color.WHITE);
 		posterlabel.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -89,5 +93,32 @@ public class TicketFrame extends JFrame {
 		});
 		contentPane.add(printbutton);
 		contentPane.add(disposebutton);
+	}
+	
+	public static void ticketchange(String name) {
+		if(name.equals("pagoda")) {
+			ticketname = "파고다의 저주";
+			ticketplace = "KGArtHall 601호";
+		}
+		else if(name.equals("jawsbar")) {
+			ticketname = "이 겨울, 눈꽃 머금은 죠스바";
+			ticketplace = "KGArtHall 501호";
+		} 
+		else if(name.equals("marathon")) {
+			ticketname = "Green Marathon";
+			ticketplace = "BEXCO";
+		} 
+		else if(name.equals("thisjava")) {
+			ticketname = "이것이 자바다";
+			ticketplace = "KGArtHall 502호";
+		} 
+		else if(name.equals("basketball")) {
+			ticketname = "신장이 아닌, 심장으로";
+			ticketplace = "경남 공업 고등학교 운동장";
+		} 
+		else if(name.equals("presentation")) {
+			ticketname = "프로젝트 발표회";
+			ticketplace = "KGArtHall";
+		} 
 	}
 }

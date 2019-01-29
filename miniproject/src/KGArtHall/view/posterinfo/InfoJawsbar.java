@@ -34,7 +34,7 @@ public class InfoJawsbar extends JPanel{
 		JLabel binfo3 = new JLabel("종류 : 콘서트");
 		JLabel binfo4 = new JLabel("장소 : KGArtHall 501호");
 		JLabel binfo5 = new JLabel("가격 : 30,000원");
-		JLabel binfo6 = new JLabel("출연 : 조진화♥");
+		JLabel binfo6 = new JLabel("출연 : 조진화");
 		
 		
 		binfo1.setBounds(700,200,400,100);

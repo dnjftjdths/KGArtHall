@@ -57,6 +57,8 @@ public class ReserveBasketball extends JPanel {
 		paybutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				view.reservedate = dateChooser.getDate();
+				view.reservenumber = Integer.parseInt(comboBox.getSelectedItem().toString());
 				view.change(view, "paypanel", "basketball");
 			}
 		});

@@ -12,9 +12,12 @@ public class DBConnection {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			try {
-				String userId="ITBANK";		// selection 예제에서는 scott
-				String userPw = "PAGODA";		// selection 예제에서는 kg
-				String url = "jdbc:oracle:thin:@DESKTOP-OPLFPOO:1521:orcl";
+				String userId="SCHOOL";		// selection 예제에서는 scott
+				String userPw = "kg";		// selection 예제에서는 kg
+				// String userId="ITBANK";
+				// String userPw = "PAGODA";
+				String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+				// String url = "jdbc:oracle:thin:@DESKTOP-OPLFPOO:1521:orcl";
 				conn = DriverManager.getConnection(url, userId, userPw);
 			} catch (SQLException e) {
 				System.out.println();

@@ -15,7 +15,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.toedter.calendar.JDateChooser;
@@ -32,9 +31,6 @@ public class ReservePagoda extends JPanel {
 	Display view;
 	public Date min;
 	public JComboBox comboBox;
-
-	public Date reservedate;
-	public int reservenumber;
 	
 	public ReservePagoda(Display view) {
 		setLayout(null);
@@ -62,8 +58,8 @@ public class ReservePagoda extends JPanel {
 		paybutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				reservedate = dateChooser.getDate();
-				reservenumber = Integer.parseInt(comboBox.getSelectedItem().toString());
+				view.reservedate = dateChooser.getDate();
+				view.reservenumber = Integer.parseInt(comboBox.getSelectedItem().toString());
 				view.change(view, "paypanel", "pagoda");
 			}
 		});

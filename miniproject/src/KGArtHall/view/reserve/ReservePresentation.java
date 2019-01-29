@@ -30,7 +30,7 @@ public class ReservePresentation extends JPanel {
 	Display view;
 	public Date min;
 	public JComboBox comboBox;
-
+	
 	public ReservePresentation(Display view) {
 		setLayout(null);
 		TitlePanel title = new TitlePanel(view);
@@ -57,6 +57,8 @@ public class ReservePresentation extends JPanel {
 		paybutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				view.reservedate = dateChooser.getDate();
+				view.reservenumber = Integer.parseInt(comboBox.getSelectedItem().toString());
 				view.change(view, "paypanel", "presentation");
 			}
 		});

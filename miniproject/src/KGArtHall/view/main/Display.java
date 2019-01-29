@@ -1,5 +1,7 @@
 package KGArtHall.view.main;
 
+import java.util.Date;
+
 import javax.swing.JFrame;
 
 import KGArtHall.view.MembershipPanel;
@@ -23,21 +25,27 @@ public class Display extends JFrame {
 	public MainView mainview = null;
 	public MembershipPanel membership = null;
 	public MainView loginview = null;
+	
 	public InfoPagoda infopagoda = null;
 	public InfoJawsbar infojawsbar = null;
 	public InfoMarathon infomarathon = null;
 	public InfoBasketball infobasketball = null;
 	public InfoThisjava infothisjava = null;
 	public InfoPresentation infopresentation = null;
+	
 	public ReservePagoda reservepagoda = null;
 	public ReserveJawsbar reservejawsbar = null;
 	public ReserveMarathon reservemarathon = null;
 	public ReserveBasketball reservebasketball = null;
 	public ReservePresentation reservepresentation = null;
 	public ReserveThisjava reservethisjava = null;
+	
 	public PayPanel paypanel = null;
+	
 	public String loginid = "";
-
+	public Date reservedate;
+	public int reservenumber;
+	
 	public static void main(String[] args) {
 		Display view = new Display();
 
