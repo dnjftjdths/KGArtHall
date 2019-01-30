@@ -20,7 +20,7 @@ public class InfoJawsbar extends JPanel{
 	public InfoJawsbar(Display view){
 		Image image2 = Toolkit.getDefaultToolkit().createImage("image\\jawsbarinfo.png");
 		JButton reservation = new JButton("예매");
-		reservation.setBounds(700,600,100,50);
+		reservation.setBounds(900,730,100,50);
 		
 		JLabel b = new JLabel(new ImageIcon(image2));
 		b.setBounds(100,200,400,500);
@@ -36,6 +36,11 @@ public class InfoJawsbar extends JPanel{
 		JLabel binfo5 = new JLabel("가격 : 30,000원");
 		JLabel binfo6 = new JLabel("출연 : 조진화");
 		
+		// 줄거리 내용
+		JLabel summary1= new JLabel("이 겨울, 몸은 추워도 마음은 따뜻해야하지 않습니까?");
+		JLabel summary2= new JLabel("여기 마음을 녹여줄 감미로운 목소리");
+		JLabel summary3= new JLabel("조진화의 겨울 콘서트로 오세요");
+		JLabel summary4= new JLabel("올 겨울을 책임지겠습니다.");
 		
 		binfo1.setBounds(700,200,400,100);
 		binfo2.setBounds(700,250,300,100);
@@ -51,6 +56,12 @@ public class InfoJawsbar extends JPanel{
 		binfo4.setFont(binfo4.getFont().deriveFont(20.0f));
 		binfo5.setFont(binfo5.getFont().deriveFont(20.0f));
 		binfo6.setFont(binfo6.getFont().deriveFont(20.0f));
+		
+		// 줄거리 내용 위치
+		summary1.setBounds(700,520,400,100);
+		summary2.setBounds(700,550,400,100);
+		summary3.setBounds(700,580,400,100);
+		summary4.setBounds(700,610,400,100);
 		
 		reservation.addActionListener(new ActionListener() {
 			@Override
@@ -68,6 +79,7 @@ public class InfoJawsbar extends JPanel{
 		add(title);
 		add(b);
 		add(binfo1); add(binfo2); add(binfo3); add(binfo4); add(binfo5); add(binfo6);
+		add(summary1); add(summary2); add(summary3); add(summary4); 
 		
 		setSize(1280,960);
 		setLayout(null);
