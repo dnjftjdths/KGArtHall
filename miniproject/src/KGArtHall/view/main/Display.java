@@ -4,8 +4,10 @@ import java.util.Date;
 
 import javax.swing.JFrame;
 
+import KGArtHall.model.ReserveInfo;
 import KGArtHall.view.MembershipPanel;
 import KGArtHall.view.PayPanel;
+import KGArtHall.view.ReserveConfirm;
 import KGArtHall.view.posterinfo.InfoBasketball;
 import KGArtHall.view.posterinfo.InfoJawsbar;
 import KGArtHall.view.posterinfo.InfoMarathon;
@@ -46,6 +48,8 @@ public class Display extends JFrame {
 	public Date reservedate;
 	public int reservenumber;
 	public String reserveno;
+	
+	public ReserveConfirm reserveconfirm = null;
 	
 	public static void main(String[] args) {
 		Display view = new Display();
@@ -156,6 +160,11 @@ public class Display extends JFrame {
 			getContentPane().add(reservethisjava);
 			reservethisjava.getDateChooser().setDate(reservethisjava.min);
 			reservethisjava.comboBox.setSelectedIndex(0);
+			revalidate();
+			repaint();
+		} else if (panelName.equals("reserveconfirm")) {
+			getContentPane().removeAll();
+			getContentPane().add(reserveconfirm);
 			revalidate();
 			repaint();
 		}

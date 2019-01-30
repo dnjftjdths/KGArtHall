@@ -10,6 +10,14 @@ public class ReserveInfo {
 	private int reserveno;
 	
 	public ReserveInfo(){}
+	
+	public ReserveInfo(String name, Date date, int number, int reserveno) {
+		this.name = name;
+		this.date = date;
+		this.number = number;
+		this.reserveno = reserveno;
+	}
+
 	public String getName() {
 		return name;
 	}
