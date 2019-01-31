@@ -29,7 +29,7 @@ public class IDPWPanel extends JPanel {
 
 		JButton login = new JButton("로그인");
 		JButton regist = new JButton("회원가입");
-		JButton registinfo = new JButton("예매 정보");
+		
 
 		regist.addActionListener(new ActionListener() {
 			@Override
@@ -59,7 +59,7 @@ public class IDPWPanel extends JPanel {
 		inputpw.setBounds(130, 75, 200, 40);
 		login.setBounds(40, 150, 140, 40);
 		regist.setBounds(200, 150, 140, 40);
-		registinfo.setBounds(40, 200, 300, 40);
+
 
 		add(id);
 		add(pw);
@@ -67,7 +67,7 @@ public class IDPWPanel extends JPanel {
 		add(regist);
 		add(inputid);
 		add(inputpw);
-		add(registinfo);
+	
 		setBounds(30, 220, 400, 300);
 		setBackground(Color.WHITE);
 		setLayout(null);

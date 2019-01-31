@@ -16,7 +16,7 @@ public class TitlePanel extends JPanel {
 	Display view;
 
 	public TitlePanel(Display view) {
-		Image image = Toolkit.getDefaultToolkit().createImage("image\\Title.png");
+		Image image = Toolkit.getDefaultToolkit().createImage("image\\maintitle.png");
 		JButton title = new JButton(new ImageIcon(image));
 		title.addActionListener(new ActionListener() {
 			@Override
@@ -30,7 +30,7 @@ public class TitlePanel extends JPanel {
 		});
 
 		title.setHorizontalAlignment(JLabel.CENTER);
-		title.setBounds(500, 60, 210, 60);
+		title.setBounds(387, 0, 506, 150);
 		title.setBackground(Color.WHITE);
 		add(title);
 		setBounds(0, 0, 1280, 150);

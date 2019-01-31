@@ -5,7 +5,7 @@ import java.util.Date;
 
 import javax.swing.JFrame;
 
-import KGArtHall.model.ReserveInfo;
+import KGArtHall.view.AdvertisePanel;
 import KGArtHall.view.MembershipPanel;
 import KGArtHall.view.PayPanel;
 import KGArtHall.view.ReserveConfirm;
@@ -30,6 +30,7 @@ public class Display extends JFrame {
 	public MainView mainview = null;
 	public MembershipPanel membership = null;
 	public MainView loginview = null;
+
 	
 	public InfoPagoda infopagoda = null;
 	public InfoJawsbar infojawsbar = null;

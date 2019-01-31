@@ -19,8 +19,6 @@ import javax.swing.JPanel;
 
 import com.toedter.calendar.JDateChooser;
 
-import KGArtHall.Dao.ReserveDao;
-import KGArtHall.util.DBConnection;
 import KGArtHall.view.main.Display;
 import KGArtHall.view.main.TitlePanel;
 
@@ -33,6 +31,7 @@ public class ReservePagoda extends JPanel {
 	Display view;
 	public Date min;
 	public JComboBox comboBox;
+	
 	public ReservePagoda(Display view) {
 		setLayout(null);
 		TitlePanel title = new TitlePanel(view);
@@ -49,7 +48,7 @@ public class ReservePagoda extends JPanel {
 		min = new Date(mincal.getTimeInMillis());
 		dateChooser.setMinSelectableDate(min);
 		dateChooser.setDate(min);
-		
+
 		getDateChooser().setBounds(629, 256, 199, 29);
 		add(getDateChooser());
 
@@ -72,16 +71,11 @@ public class ReservePagoda extends JPanel {
 		pricelabel.setBounds(697, 538, 300, 26);
 		add(pricelabel);
 		setSize(1280, 960);
-		
-		ReserveDao reserveDao = ReserveDao.getInstance();
-		
+
 		comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
-
 		comboBox.setBounds(629, 349, 199, 29);
 		comboBox.setBackground(Color.WHITE);
-		// comboBox.setSelectedIndex(1);
-		
 		add(comboBox);
 		DecimalFormat df = new DecimalFormat("#,###");
 		comboBox.addActionListener(new ActionListener() {
@@ -107,13 +101,13 @@ public class ReservePagoda extends JPanel {
 		posterlabel.setBounds(117, 170, 400, 500);
 		add(posterlabel);
 
-		String attention = "* 유의 사항\n- 교환 및 환불은 불가능합니다.\n"
+		String attention = "* 유의 사항\n- 예매 취소는 예매정보 에서 가능 합니다.\n"
 				+ "- 좌석은 선착순으로 배정됩니다.\n     티켓팅 : 공연 시작 1시간전\n     입장 : 공연 시작 20분 전";
 		JLabel attention1 = new JLabel("* 유의 사항");
 		attention1.setFont(new Font("나눔바른펜", Font.PLAIN, 20));
 		attention1.setBounds(182, 700, 138, 30);
 
-		JLabel attention2 = new JLabel("- 교환 및 환불은 불가능합니다.");
+		JLabel attention2 = new JLabel("- 예매 취소는 예매정보 에서 가능 합니다.");
 		attention2.setFont(new Font("나눔바른펜", Font.PLAIN, 15));
 		attention2.setBounds(195, 730, 326, 30);
 
@@ -157,5 +151,4 @@ public class ReservePagoda extends JPanel {
 	public void setDateChooser(JDateChooser dateChooser) {
 		this.dateChooser = dateChooser;
 	}
-	
 }

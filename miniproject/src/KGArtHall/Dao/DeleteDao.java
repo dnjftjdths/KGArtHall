@@ -17,8 +17,9 @@ public class DeleteDao {
 	public void delete(Connection conn, ReserveInfo info) throws SQLException {
 		PreparedStatement pstate = null;
 		try{
-			pstate = conn.prepareStatement("DELETE FROM KGART_RESERVEINFO WHERE RESERVENO = ?");
-			pstate.setInt(1, info.getReserveno());
+			pstate = conn.prepareStatement("DELETE FROM KGART_RESERVEINFO WHERE ID = ? AND ARTDATE = ?");
+			pstate.setString(1, info.getId());
+			pstate.setDate(2, (java.sql.Date) info.getDate());
 			int cnt = pstate.executeUpdate();
 			if(cnt == 0) {
 				System.out.println("예매가 취소되지 않았습니다.");

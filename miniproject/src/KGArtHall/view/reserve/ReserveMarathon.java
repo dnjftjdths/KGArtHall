@@ -106,7 +106,7 @@ public class ReserveMarathon extends JPanel {
 		attention1.setFont(new Font("나눔바른펜", Font.PLAIN, 20));
 		attention1.setBounds(182, 700, 138, 30);
 
-		JLabel attention2 = new JLabel("- 교환 및 환불은 불가능합니다.");
+		JLabel attention2 = new JLabel("- 예매 취소는 예매정보 에서 가능 합니다.");
 		attention2.setFont(new Font("나눔바른펜", Font.PLAIN, 15));
 		attention2.setBounds(195, 730, 326, 30);
 

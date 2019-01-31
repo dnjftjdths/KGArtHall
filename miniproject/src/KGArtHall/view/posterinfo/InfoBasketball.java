@@ -20,7 +20,7 @@ public class InfoBasketball extends JPanel{
 	public InfoBasketball(Display view){
 		Image image4 = Toolkit.getDefaultToolkit().createImage("image\\basketballinfo.png");
 		JButton reservation = new JButton("¿¹¸Å");
-		reservation.setBounds(700,600,100,50);
+		reservation.setBounds(900,730,100,50);
 		
 		JLabel d = new JLabel(new ImageIcon(image4));
 		d.setBounds(100,200,400,500);
