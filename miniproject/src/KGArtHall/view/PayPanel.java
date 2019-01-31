@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import KGArtHall.Dao.ReserveDao;
 import KGArtHall.model.ReserveInfo;
 import KGArtHall.service.ReserveService;
 import KGArtHall.service.TelService;
@@ -56,6 +57,7 @@ public class PayPanel extends JPanel {
 					reserveinfo.setNumber(view.reservenumber);
 					ReserveService reserveService = ReserveService.getInstance();
 					view.reserveno = name.toUpperCase() + reserveService.reserve(reserveinfo);
+					
 					System.out.println("결제가 완료되었습니다.");
 					JOptionPane.showMessageDialog(null, "결제가 완료되었습니다.");
 					TicketFrame ticket = new TicketFrame(view, name);

@@ -19,6 +19,8 @@ import javax.swing.JPanel;
 
 import com.toedter.calendar.JDateChooser;
 
+import KGArtHall.Dao.ReserveDao;
+import KGArtHall.util.DBConnection;
 import KGArtHall.view.main.Display;
 import KGArtHall.view.main.TitlePanel;
 
@@ -31,7 +33,6 @@ public class ReservePagoda extends JPanel {
 	Display view;
 	public Date min;
 	public JComboBox comboBox;
-	
 	public ReservePagoda(Display view) {
 		setLayout(null);
 		TitlePanel title = new TitlePanel(view);
@@ -48,7 +49,7 @@ public class ReservePagoda extends JPanel {
 		min = new Date(mincal.getTimeInMillis());
 		dateChooser.setMinSelectableDate(min);
 		dateChooser.setDate(min);
-
+		
 		getDateChooser().setBounds(629, 256, 199, 29);
 		add(getDateChooser());
 
@@ -71,11 +72,16 @@ public class ReservePagoda extends JPanel {
 		pricelabel.setBounds(697, 538, 300, 26);
 		add(pricelabel);
 		setSize(1280, 960);
-
+		
+		ReserveDao reserveDao = ReserveDao.getInstance();
+		
 		comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
+
 		comboBox.setBounds(629, 349, 199, 29);
 		comboBox.setBackground(Color.WHITE);
+		// comboBox.setSelectedIndex(1);
+		
 		add(comboBox);
 		DecimalFormat df = new DecimalFormat("#,###");
 		comboBox.addActionListener(new ActionListener() {
@@ -151,4 +157,5 @@ public class ReservePagoda extends JPanel {
 	public void setDateChooser(JDateChooser dateChooser) {
 		this.dateChooser = dateChooser;
 	}
+	
 }
