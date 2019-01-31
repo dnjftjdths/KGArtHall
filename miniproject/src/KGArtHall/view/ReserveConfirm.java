@@ -48,7 +48,9 @@ public class ReserveConfirm extends JPanel {
 				reservename.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						
+						ConfirmDetail detail = new ConfirmDetail(view, info);
+						detail.setLocationRelativeTo(null);
+						detail.setVisible(true);
 					}
 				});
 				add(reservename);

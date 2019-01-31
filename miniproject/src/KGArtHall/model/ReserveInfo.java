@@ -11,7 +11,8 @@ public class ReserveInfo {
 	
 	public ReserveInfo(){}
 	
-	public ReserveInfo(String name, Date date, int number, int reserveno) {
+	public ReserveInfo(String id, String name, Date date, int number, int reserveno) {
+		this.id = id;
 		this.name = name;
 		this.date = date;
 		this.number = number;

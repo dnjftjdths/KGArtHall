@@ -20,7 +20,6 @@ public class ConfirmDao {
 		return confirmdao;
 	}
 
-	@SuppressWarnings("null")
 	public List<ReserveInfo> confirm(Connection conn, String loginid) throws SQLException {
 		PreparedStatement pstate = null;
 		ResultSet rs = null;
@@ -32,6 +31,7 @@ public class ConfirmDao {
 			while (rs.next()) {
 				if (rs.getString(1).equals(loginid)) {
 					reserveinfo.add(new ReserveInfo(
+							rs.getString(1),
 							rs.getString(2),
 							rs.getDate(3),
 							rs.getInt(4),

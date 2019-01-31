@@ -1,5 +1,6 @@
 package KGArtHall.view.main;
 
+import java.awt.event.WindowEvent;
 import java.util.Date;
 
 import javax.swing.JFrame;
@@ -22,6 +23,8 @@ import KGArtHall.view.reserve.ReservePresentation;
 import KGArtHall.view.reserve.ReserveThisjava;
 
 public class Display extends JFrame {
+	public Display() {
+	}
 	private static final long serialVersionUID = 1L;
 
 	public MainView mainview = null;
@@ -40,8 +43,11 @@ public class Display extends JFrame {
 	public ReserveMarathon reservemarathon = null;
 	public ReserveBasketball reservebasketball = null;
 	public ReservePresentation reservepresentation = null;
-	public ReserveThisjava reservethisjava = null;
-	
+	public ReserveThisjava reservethisjava = null;@Override
+	protected void processWindowEvent(WindowEvent e) {
+		// TODO Auto-generated method stub
+		super.processWindowEvent(e);
+	}
 	public PayPanel paypanel = null;
 	
 	public String loginid = "";
@@ -57,7 +63,7 @@ public class Display extends JFrame {
 		view.setTitle("KGArtHall");
 		view.mainview = new MainView(view);
 		view.membership = new MembershipPanel(view);
-		view.add(view.mainview);
+		view.getContentPane().add(view.mainview);
 		view.infopagoda = new InfoPagoda(view);
 		view.infojawsbar = new InfoJawsbar(view);
 		view.infomarathon = new InfoMarathon(view);
@@ -73,7 +79,7 @@ public class Display extends JFrame {
 		
 		view.setResizable(false);
 		view.setSize(1280, 960);
-		view.setLayout(null);
+		view.getContentPane().setLayout(null);
 		view.setVisible(true);
 
 	}
