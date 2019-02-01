@@ -41,6 +41,10 @@ public class MainView extends JPanel {
 		PosterPanel poster = new PosterPanel(view);
 		add(poster);
 		
+		AdvertisePanel advertise = new AdvertisePanel(view);
+		advertise.setBounds(30, 456, 400, 342);
+		poster.add(advertise);
+		
 		setSize(1280, 960);
 		setBackground(Color.WHITE);
 		setLayout(null);

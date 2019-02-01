@@ -24,9 +24,10 @@ public class AdvertisePanel extends JPanel {
 		add(lblNewLabel);
 		
 		// ¿ÃπÃ¡ˆ
-		Image image1 = Toolkit.getDefaultToolkit().createImage("image\\Moviead1.png");
+		Image image1 = Toolkit.getDefaultToolkit().createImage("image\\Moviead3.png");
 		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(image1));
-		lblNewLabel_1.setBounds(50, 47, 215, 243);
+		lblNewLabel_1.setBackground(Color.WHITE);
+		lblNewLabel_1.setBounds(47, 41, 300, 275);
 		add(lblNewLabel_1);
 		
 		

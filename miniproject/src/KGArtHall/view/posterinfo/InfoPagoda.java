@@ -110,14 +110,12 @@ public class InfoPagoda extends JPanel{
 		setSize(1280,960);
 		setLayout(null);
 		
-		JPanel panel = new JPanel();
+		
 		Image image2 = Toolkit.getDefaultToolkit().createImage("image\\pagodaback.png");
 		JLabel label = new JLabel(new ImageIcon(image2));
 		label.setBounds(0, 50, 1280, 960);
 		add(label);
-		panel.setBackground(new Color(240, 255, 255));
-		panel.setBounds(660, 220, 476, 573);
-		add(panel);
+
 		setVisible(true);
 	}
 }

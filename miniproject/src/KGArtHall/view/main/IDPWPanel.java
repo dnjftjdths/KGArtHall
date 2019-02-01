@@ -68,7 +68,7 @@ public class IDPWPanel extends JPanel {
 		add(inputid);
 		add(inputpw);
 	
-		setBounds(30, 220, 400, 300);
+		setBounds(30, 220, 400, 213);
 		setBackground(Color.WHITE);
 		setLayout(null);
 		setVisible(true);

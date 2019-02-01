@@ -12,17 +12,23 @@ import javax.swing.JPanel;
 import KGArtHall.model.ReserveInfo;
 import KGArtHall.service.ConfirmService;
 import KGArtHall.view.ReserveConfirm;
+import java.awt.Font;
 
 public class LoginPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	Display view;
 	LoginPanel(Display view, String name) {
+		setBackground(Color.LIGHT_GRAY);
 		this.view = view;
 		JLabel member = new JLabel(name + " ´Ô");
+		member.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		member.setBounds(80, 20, 182, 40);
 
 		JButton logout = new JButton("·Î±×¾Æ¿ô");
+		logout.setBounds(73, 150, 140, 40);
 		JButton registinfo = new JButton("¿¹¸Å Á¤º¸");
+		registinfo.setBounds(236, 150, 140, 40);
 
 		logout.addActionListener(new ActionListener() {
 			@Override
@@ -43,19 +49,14 @@ public class LoginPanel extends JPanel {
 				view.reserveconfirm = new ReserveConfirm(view, reserveinfo);
 				view.change("reserveconfirm");
 			}
-		});
-		member.setBounds(80, 20, 100, 40);
-
-		logout.setBounds(40, 150, 140, 40);;
-		registinfo.setBounds(200, 150, 140, 40);
+		});;
+		setLayout(null);
 
 		add(member);
 		add(logout);
 		add(registinfo);
 
-		setBounds(30, 220, 400, 300);
-		setBackground(Color.WHITE);
-		setLayout(null);
+		setBounds(30, 220, 400, 208);
 		setVisible(true);
 	}
 
