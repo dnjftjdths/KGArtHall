@@ -1,5 +1,7 @@
 package KGArtHall.view.posterinfo;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -20,10 +22,13 @@ public class InfoBasketball extends JPanel{
 	public InfoBasketball(Display view){
 		Image image4 = Toolkit.getDefaultToolkit().createImage("image\\basketballinfo.png");
 		JButton reservation = new JButton("예매");
+		reservation.setForeground(Color.WHITE);
+		reservation.setBackground(new Color(0, 100, 0));
+		reservation.setFont(new Font("배달의민족 도현", Font.PLAIN, 15));
 		reservation.setBounds(900,730,100,50);
 		
 		JLabel d = new JLabel(new ImageIcon(image4));
-		d.setBounds(100,200,400,500);
+		d.setBounds(120,200,400,500);
 		
 		// 메인화면으로 이동
 		TitlePanel title = new TitlePanel(view);

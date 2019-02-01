@@ -22,29 +22,29 @@ public class PosterPanel extends JPanel {
 	
 		Image image1 = Toolkit.getDefaultToolkit().createImage("image\\pagoda.png");
 		JButton a = new JButton(new ImageIcon(image1));
-		a.setBounds(450,250,200,250);
+		a.setBounds(450,220,200,250);
 		a.setMnemonic(KeyEvent.VK_1);
 		a.setBackground(Color.WHITE);
 		JLabel al = new JLabel("파고다의 저주");
-		al.setBounds(450, 500, 200, 30);
+		al.setBounds(450, 470, 200, 30);
 		al.setHorizontalAlignment(JLabel.CENTER);
 		
 		Image image2 = Toolkit.getDefaultToolkit().createImage("image\\jawsbar.png");
 		JButton b = new JButton(new ImageIcon(image2));
-		b.setBounds(700,250,200,250);
+		b.setBounds(700,220,200,250);
 		b.setMnemonic(KeyEvent.VK_1);
 		b.setBackground(Color.WHITE);
 		JLabel bl = new JLabel("이 겨울, 눈꽃 머금은 죠스바");
-		bl.setBounds(700, 500, 200, 30);
+		bl.setBounds(700, 470, 200, 30);
 		bl.setHorizontalAlignment(JLabel.CENTER);
 		
 		Image image3 = Toolkit.getDefaultToolkit().createImage("image\\marathon.png");
 		JButton c = new JButton(new ImageIcon(image3));
-		c.setBounds(950,250,200,250); 
+		c.setBounds(950,220,200,250); 
 		c.setMnemonic(KeyEvent.VK_1);
 		c.setBackground(Color.WHITE);
 		JLabel cl = new JLabel("Green Marathon");
-		cl.setBounds(950, 500, 200, 30);
+		cl.setBounds(950, 470, 200, 30);
 		cl.setHorizontalAlignment(JLabel.CENTER);
 
 		Image image4 = Toolkit.getDefaultToolkit().createImage("image\\thisisjava.png");
@@ -84,6 +84,7 @@ public class PosterPanel extends JPanel {
 		add(tf);
 		add(al); add(bl); add(cl); add(dl); add(el); add(fl);
 		setSize(1280, 960);
+		setBackground(Color.WHITE);
 		setLayout(null);
 		setVisible(true);
 		
@@ -124,6 +125,6 @@ public class PosterPanel extends JPanel {
 			}
 		});
 
-	
+		
 	}
 }

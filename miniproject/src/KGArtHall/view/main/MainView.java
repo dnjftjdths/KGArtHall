@@ -10,16 +10,9 @@ public class MainView extends JPanel {
 	int login = 0;
 	public IDPWPanel idpw = null;
 	
-
-	/**
-	 * @wbp.parser.constructor
-	 */
 	MainView(Display view){
 		TitlePanel title = new TitlePanel(view);
 		add(title);
-		
-		MenuPanel menu = new MenuPanel();
-		add(menu);
 		
 		idpw = new IDPWPanel(view);
 		idpw.setBackground(Color.LIGHT_GRAY);
@@ -34,6 +27,7 @@ public class MainView extends JPanel {
 		poster.add(advertise);
 		
 		setSize(1280, 960);
+		setBackground(Color.WHITE);
 		setLayout(null);
 		setVisible(true);
 	}
@@ -42,15 +36,13 @@ public class MainView extends JPanel {
 		TitlePanel title = new TitlePanel(view);
 		add(title);
 		
-		MenuPanel menu = new MenuPanel();
-		add(menu);
-		
 		add(loginpanel);
 		
 		PosterPanel poster = new PosterPanel(view);
 		add(poster);
 		
 		setSize(1280, 960);
+		setBackground(Color.WHITE);
 		setLayout(null);
 		setVisible(true);
 	}

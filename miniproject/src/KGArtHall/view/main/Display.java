@@ -1,5 +1,6 @@
 package KGArtHall.view.main;
 
+import java.awt.Color;
 import java.awt.event.WindowEvent;
 import java.util.Date;
 
@@ -79,6 +80,7 @@ public class Display extends JFrame {
 		view.reservethisjava = new ReserveThisjava(view);
 		
 		view.setResizable(false);
+		view.setBackground(Color.WHITE);
 		view.setSize(1280, 960);
 		view.getContentPane().setLayout(null);
 		view.setVisible(true);

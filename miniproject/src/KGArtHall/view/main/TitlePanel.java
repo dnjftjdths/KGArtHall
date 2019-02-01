@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class TitlePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -29,14 +30,21 @@ public class TitlePanel extends JPanel {
 			}
 		});
 
+		JPanel line = new JPanel();
+		line.setBounds(0, 160, 1280, 5);
+		line.setBackground(new Color(0, 100, 0));
+		add(line);
+		
 		title.setHorizontalAlignment(JLabel.CENTER);
 		title.setBounds(387, 0, 506, 150);
 		title.setBackground(Color.WHITE);
 		add(title);
-		setBounds(0, 0, 1280, 150);
+		
+		setBounds(0, 0, 1280, 165);
 		setLayout(null);
-		setBackground(Color.white);
+		setBackground(Color.WHITE);
 		setVisible(true);
 	}
+	
 
 }

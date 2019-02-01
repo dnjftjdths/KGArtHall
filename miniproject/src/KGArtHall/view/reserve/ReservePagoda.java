@@ -97,7 +97,6 @@ public class ReservePagoda extends JPanel {
 		Image poster = Toolkit.getDefaultToolkit().createImage("image\\pagodainfo.png");
 		JLabel posterlabel = new JLabel(new ImageIcon(poster));
 		posterlabel.setBackground(Color.WHITE);
-		posterlabel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		posterlabel.setBounds(117, 170, 400, 500);
 		add(posterlabel);
 
